@@ -1,2 +1,2 @@
-//Ajustes 
+
 console.log('HOLA')
