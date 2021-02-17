@@ -20,3 +20,6 @@ const fullname = `${name} ${lastname}`
 console.log(fullname)
 // Fredy Ballesteros
 //Desarrollo SW2
+
+let i = 0
+i ++
