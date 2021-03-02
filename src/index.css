@@ -4,10 +4,12 @@ html, body {
     font-family: Helvetica, Arial , sans-serif;
     font-size: 1.3rem;
     padding: 70px;
+    
 }
 
 button {
     font-size: 1.3rem;
-    margin-right: 10px;
+    margin-right: 50px;
     padding: 10px;
 }
+
