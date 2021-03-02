@@ -28,7 +28,7 @@ const ComponenteContador = ( {valorInicial} ) =>{
         </button>
 
         <button onClick={(e)=> setConteo(valorInicial)}>
-            Restear            
+            Resetear            
         </button>
 
         </>
