@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react'
+
+import { Mensaje } from './Mensaje'
+
 import './Estilo.css'
 
 export const FormularioUseefect = () => {
@@ -7,10 +10,19 @@ export const FormularioUseefect = () => {
   
     const {name, email} = formState
      
-    useEffect(() => {
+   /* useEffect(() => {
         console.log('me ejecuto')
     },[])
 
+    useEffect(() => {
+        console.log('algo con el formState')
+    },[formState])
+
+
+    useEffect(() => {
+        console.log('algo con el NOMBRE')
+    },[name])
+     */
 
     const HandleInputChange = ({target}) =>{
         //console.log(e.target)
@@ -50,8 +62,8 @@ export const FormularioUseefect = () => {
                 />
              </div>   
             
-            
-
+              {   (name === '123')&&<Mensaje/> }            
+              
         </div>
     )
 }
