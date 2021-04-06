@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { FormularioUseefect } from './componentes/FormularioUseefect';
-
+import {ContadorCustomHook} from './componentes/ContadorCustomHook'
 
 
 
 const divRoot = document.querySelector('#root');
 
-ReactDOM.render(<FormularioUseefect/>, divRoot);
+ReactDOM.render(<ContadorCustomHook/>, divRoot);
