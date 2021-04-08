@@ -10,11 +10,9 @@ export const ContadorCustomHook = () => {
         <>
         <h1>CounterCustomHook : {contando}</h1>
         <hr/>
-
         <button onClick={incrementar} className="btn">+ 1</button>
         <button onClick={resetear} className="btn">Reset</button>
-        <button onClick={decrementar} className="btn">- 1</button>
-            
+        <button onClick={decrementar} className="btn">- 1</button>            
         </>
 
     )

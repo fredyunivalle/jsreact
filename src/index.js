@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {ContadorCustomHook} from './componentes/ContadorCustomHook'
+import { MuchosCustomHooks } from './componentes/MuchosCustomHooks';
 
 
 
 const divRoot = document.querySelector('#root');
 
-ReactDOM.render(<ContadorCustomHook/>, divRoot);
+
+ReactDOM.render( <MuchosCustomHooks/>, divRoot);
