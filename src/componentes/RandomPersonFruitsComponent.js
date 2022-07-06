@@ -4,19 +4,23 @@ import { useRef } from 'react';
 import { useRandomPersonFruits } from '../hooks/useRandomPersonsFruits'
 
 
-function RandomPersonFruitsComponent() {
+function RandomPersonFruitsComponent({proPersons, propFruits}) {
 
-    const { fruits_persons, fruits, personNames, addFruit,addPersonName,randomPersonsFruits} = useRandomPersonFruits();
+    const { fruits_persons, fruits, personNames, addFruit,addPersonName,randomPersonsFruits} = useRandomPersonFruits(proPersons,propFruits);
     const inputPersonRef = useRef(null); 
     const inputFruitRef = useRef(null); 
 
 
-    const handleAddPerson = (ev) => {
+    const handleAddPerson = () => {
         addPersonName(inputPersonRef.current.value);
     }
 
-    const handleAddFruit = (ev) => {
+    const handleAddFruit = () => {
         addFruit(inputFruitRef.current.value);
+    }
+
+    const handleGenerateRandom = () => {
+        randomPersonsFruits();
     }
 
     return (
@@ -50,21 +54,49 @@ function RandomPersonFruitsComponent() {
                     </div>
                 </div>
             </div>
-            <div className='row text-center mt-5'>
+            
+            <div className="row mt-5">
                 <div className="col-6">
-                    <h2>NOMBRES DE PERSONAS</h2>
-                    <ul>
-                        {personNames.personNames.map( name =><li className='text-decoration-none'>{name}</li>
-                        )}
-                    </ul>
+                    <div className='row text-center'>
+                        <div className="col-6">
+                            <h2>PERSONAS</h2>
+                            <ul className='list-unstyled'>
+                                {personNames.map( (name,index) =><li>{index+1}. {name}</li>
+                                )}
+                            </ul>
 
+                        </div>
+                        <div className="col-6">
+                            <h2>FRUTAS</h2>
+                            <ul className='list-unstyled'>
+                                {fruits.map( (fruit,index) =><li>{index+1}. {fruit}</li>
+                                )}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
                 <div className="col-6">
-                    <h2>NOMBRES DE FRUTAS</h2>
-                    <ul>
-                        {fruits.fruits.map( fruit =><li>{fruit}</li>
-                        )}
-                    </ul>
+                    <button onClick={ev => handleGenerateRandom()}>Generar asignaciones</button>
+
+                    <table className='w-100'>
+                        <thead>
+                            <th>Posicion</th>
+                            <th>Nombre</th>
+                            <th>Fruta</th>
+                        </thead>
+                        <tbody>
+                            {fruits_persons.map(
+                                ({name, fruit}, index) => {
+                                    return <tr>
+                                        <td>{index + 1}</td>
+                                        <td>{name}</td>
+                                        <td>{fruit}</td>
+                                    </tr>
+                                }
+                            )}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

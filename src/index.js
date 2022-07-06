@@ -7,4 +7,4 @@ import RandomPersonFruitsComponent  from './componentes/RandomPersonFruitsCompon
 const divRoot = document.querySelector('#root');
 
 
-ReactDOM.render( <RandomPersonFruitsComponent/>, divRoot);
+ReactDOM.render( <RandomPersonFruitsComponent proPersons={[]} propFruits={[]}/>, divRoot);

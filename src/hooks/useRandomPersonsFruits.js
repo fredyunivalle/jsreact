@@ -1,36 +1,35 @@
 import {useState} from 'react'
 
-export const useRandomPersonFruits = () => {
+export const useRandomPersonFruits = (initialPersons, initialFruits) => {
     
-    const [fruits_persons, setState] = useState({fruits_persons: []});
-    const [fruits, setFruits] = useState({fruits: []});
-    const [personNames, setPersonNames] = useState({personNames: []});
+    const [fruits_persons, setState] = useState([]);
+    const [fruits, setFruits] = useState(initialFruits);
+    const [personNames, setPersonNames] = useState(initialPersons);
 
     
     const randomPersonsFruits = () => {
-        const fruitsAmount = fruits.lenght;
-        const namesAmount = personNames.lenght;
-        const newState = {fruits_persons: []};
-
+        const fruitsAmount = fruits.length;
+        const newState = [];
         personNames.forEach(name => {
             const randomFruit = Math.floor((Math.random() * (fruitsAmount-1)));
             const fruit = fruits[randomFruit];
-            newState.fruits_persons.push({name, fruit});
+            newState.push({name, fruit});
         });
-        
+        console.log(newState);
+
         setState(newState);
     }
 
     const addFruit = newFruit => {
         console.log(newFruit);
-        const newFruits = {fruits: [...(fruits.fruits)]};
-        newFruits.fruits.push(newFruit);
+        const newFruits = [...(fruits)];
+        newFruits.push(newFruit);
         setFruits(newFruits);
     }
 
     const addPersonName = newPersonName => {
-        const newPersonNames = {personNames: [...(personNames.personNames)]};
-        newPersonNames.personNames.push(newPersonName);
+        const newPersonNames = [...(personNames)];
+        newPersonNames.push(newPersonName);
         setPersonNames(newPersonNames);
     }
 
