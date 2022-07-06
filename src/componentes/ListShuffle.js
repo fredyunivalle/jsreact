@@ -1,20 +1,24 @@
-import {useShuffle} from '../hooks/useSuffle'
+import React from 'react';
+import {useShuffle} from '../hooks/useShuffle'
 
 const ListShuffle = (props) =>{
-    namesuseShuffle = useShuffle( props.fruits , props.name)
-    keys = namesuseShuffle.keys()
-    values = namesuseShuffle.values()
+    let namesuseShuffle = useShuffle( props.fruits , props.names)
+    let keys =Object.keys( namesuseShuffle )
+    let values = Object.values(namesuseShuffle)
 
-    items = []
+    let items = keys.map(( akey , index )=> { return <li key={index}>{keys[index]} -- {values[index]}</li> })
+    
+    console.log(items)
 
-    for (let index = 0; index < namesuseShuffle.length; index++) {
-        items.push( <li>`{keys[index]} -- {values[index]}`</li> )
-    }
 
     return(
-        <ul>
-            items
-        </ul>
+        <div>
+            <h1>listas combinadas</h1>
+            <ul>{items} </ul>
+           
+        </div>
         
     )
 }
+
+export {ListShuffle}

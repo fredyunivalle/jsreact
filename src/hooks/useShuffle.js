@@ -2,17 +2,17 @@ import {useState} from 'react'
 
 
 const useShuffle = (fruits , names) => {
-    max = fruits.length;
-    myFruitsObject = {}
+    let max = fruits.length;
+    let myFruitsObject = {};
     const [fruitNames, setFruitNames] = useState({});
-    theFruits = names.map( ()=> { return fruits[Math.floor(Math.random()*max)] })
+    let theFruits = names.map( ()=> { return fruits[Math.floor(Math.random()*max)] })
 
     for (let index = 0; index < names.length; index++) {
-       myFruitsObject = { ...myFruitsObject ,  [theFruits[index]]:names[index] }
+       myFruitsObject = { ...myFruitsObject ,  [names[index]]: theFruits[index]}
        
    }
 
-   setFruitNames(myFruitsObject)
+   /**setFruitNames(myFruitsObject) */
    
    console.log(myFruitsObject[0])
    return myFruitsObject
