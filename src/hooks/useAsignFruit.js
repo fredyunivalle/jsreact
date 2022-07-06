@@ -1,17 +1,18 @@
 import {useState} from 'react'
-
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 export const useAsignFruit = () => {
-    
+    const dictionary = new Map(); 
     const [asignFruit, setState] = useState()
     
     
-    const createMap = (fruitPersonList) => {
+    const createMap = (fruitList, personList) => {
         
-        const dictionary = new Map();
         
-        dictionary.set(fruitPersonList[0],fruitPersonList[1] );
-        console.log(dictionary.keys);
-        setState(dictionary.keys)
+        dictionary.set(fruitList[0],personList[getRandomInt(2)] );
+        dictionary.set(fruitList[1],personList[getRandomInt(2)] );
+        setState(dictionary)
     }
 
     return {

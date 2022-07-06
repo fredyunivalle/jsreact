@@ -1,15 +1,17 @@
-import React from "react";
+import React from 'react';
 import { useAsignFruit } from '../hooks/useAsignFruit'
+import './Estilo.css'
 
-export const asignFruitHook = ()  => {
-    const [asignFruit, createMap] = useAsignFruit();
-    const fruitPersonList = ["Banana", "Hanier"];
+export const ParcialHanier = ()  => {
+    const {asignFruit, createMap} = useAsignFruit()
+    const fruitList = ["Banana", "Platano"]
+    const personList = ["Hanier", "Hider"]
 
     return (
-        <>
-        hola
+        <>        
         <h1>CounterCustomHook : {asignFruit}</h1>  
-        <button onClick={createMap(fruitPersonList)} className="btn"> hola</button>       
+        <button onClick={() => createMap(fruitList, personList)} className="btn"> Presioname! para cambiar</button>     
+         
         </>
 
     )
