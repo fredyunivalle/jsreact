@@ -14,6 +14,5 @@ export const ContadorCustomHook = () => {
         <button onClick={resetear} className="btn">Reset</button>
         <button onClick={decrementar} className="btn">- 1</button>            
         </>
-
     )
 }
