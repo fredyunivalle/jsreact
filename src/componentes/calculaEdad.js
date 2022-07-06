@@ -4,7 +4,7 @@ import {useEdad} from '../hooks/useEdad'
 //import './Estilo.css'
 export const CalculaEdad = (dia, mes, anio) => {
     
-    const {edad} = useEdad()
+    const {edad} = useEdad() 
     
     return (
         <>
