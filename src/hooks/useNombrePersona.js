@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState} from "react";
 
 const useNombrePersona = (initialState) => {
     const [nombre, setStateNombre] = useState(initialState);
