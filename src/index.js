@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MuchosCustomHooks } from './componentes/MuchosCustomHooks';
+import RandomPersonFruitsComponent  from './componentes/RandomPersonFruitsComponent';
 
 
 
 const divRoot = document.querySelector('#root');
 
 
-ReactDOM.render( <MuchosCustomHooks/>, divRoot);
+ReactDOM.render( <RandomPersonFruitsComponent proPersons={[]} propFruits={[]}/>, divRoot);
