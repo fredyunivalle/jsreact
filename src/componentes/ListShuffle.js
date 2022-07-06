@@ -8,7 +8,7 @@ const ListShuffle = (props) =>{
     items = []
 
     for (let index = 0; index < namesuseShuffle.length; index++) {
-        items.push( <li>{[keys[index]]:[values[index]]}</li> )
+        items.push( <li>`{keys[index]} -- {values[index]}`</li> )
     }
 
     return(
