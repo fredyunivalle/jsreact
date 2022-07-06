@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export const useNombrePersona = (initialState='') => {
+const useNombrePersona = (initialState) => {
     const [nombre, setStateNombre] = useState(initialState);
     const [caracteres, setStateLength] = useState(0);
     const mayusNombre = ()=>{
-        setStateNombre(initialState.toUpperCase);
+        initialState!==''?setStateNombre(initialState.toUpperCase()):setStateNombre('');
         setStateLength(initialState.length);
     }
     return {
@@ -13,3 +13,4 @@ export const useNombrePersona = (initialState='') => {
         mayusNombre
     }
 }
+export default useNombrePersona ;

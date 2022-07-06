@@ -1,21 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useNombrePersona from '../hooks/useNombrePersona.js';
-import PropTypes from 'prop-types';
-
 
 const NombrePersona = (props)=>{
-    const {nombre,caracteres,mayusNombre} = useNombrePersona(props.name).mayusNombre();
+    const {nombre,caracteres,mayusNombre} = useNombrePersona(props.name);
     return(
-        <>  
-            {mayusNombre()}
+        <div>  
+            <button onClick={mayusNombre}>ClickMe</button>
             <h1>Nombre: {nombre}</h1>
             <h2># caracteres: {caracteres}</h2>
-        </>
+        </div>
     );
 }
-
-NombrePersona.propTypes = {
-    name:PropTypes.string.isRequired
-}
-
-export { NombrePersona };
+export { NombrePersona }
