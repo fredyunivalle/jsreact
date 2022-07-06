@@ -6,13 +6,13 @@ const ListShuffle = (props) =>{
     let keys =Object.keys( namesuseShuffle )
     let values = Object.values(namesuseShuffle)
 
-    let items = keys.map(( akey , index )=> { return <li key={index}>{keys[index]} -- {values[index]}</li> })
+    let items = keys.map(( akey , index )=> { return <li key={index}> {index}--{keys[index]} -- {values[index]}</li> })
     
     console.log(items)
 
 
     return(
-        <div>
+        <div className='ListShuffle' >
             <h1>listas combinadas</h1>
             <ul>{items} </ul>
            

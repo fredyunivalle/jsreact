@@ -1,6 +1,7 @@
 import { useShuffle } from "../hooks/useShuffle";
 import {  ListShuffle } from "../componentes/ListShuffle";
-import { shallow } from 'enzyme'
+import { shallow , mount } from 'enzyme'
+import React  from "react";
 
 
 describe('pruebas a useshuffle ', () =>{
@@ -15,10 +16,10 @@ describe('pruebas a useshuffle ', () =>{
         let result = shallow( 
         <ListShuffle
             names={["papas" , "pollo", "carne" , "cebollas" , "camino"]} 
-            fruits = {["comida" , "almuerzo" , "desayunno"]}
+fruits = {["comida" , "almuerzo" , "desayunno"]}
         ></ListShuffle>)
     
-        expect(result.contains( < li key={0}/> )).toEqual(true)
+        expect(result.find( "#key" )).toEqual(expect.anything())
     })
     
 
