@@ -1,26 +1,17 @@
-import useShuffle from "../.."
+import { useShuffle } from "../../hooks/useShuffle";
 
-describe('Todo relacionado saludo', () =>{
+describe('pruebas a useshuffle ', () =>{
 
 
     test('Prueba saludo con nombre', () =>{
 
-        let nombre = 'Fredy'
+        let names = [ 'Fredy' , 'hider' , 'hanier']
     
-        let saludo = saludar(nombre)
+        let fruits = [ `mango` , `fresa` ]
         
     
-        expect(saludo).toBe('Hola Fredy')
+        expect( useShuffle(fruits , names)).not.toBe({})
     })
     
-    test('Prueba saludo sin nombre', () =>{
-    
-        
-    
-        let saludo = saludar()
-        
-    
-        expect(saludo).toBe('Hola Anonimus')
-    })
 
 })
