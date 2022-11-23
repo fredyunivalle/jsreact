@@ -1,11 +1,13 @@
 import React from 'react'
 import { useCounter } from '../hooks/useCounter'
 import { useFetch } from '../hooks/useFetch'
+import { useAlterno } from '../hooks/useAlterno'
 import './Estilo.css'
 
 export const MuchosCustomHooks = () => {
 
    const {contando, incrementar} = useCounter(1)
+   const {alterna, useAlterno} = useAlterno("revelo");
     
     const state = useFetch(`https://www.breakingbadapi.com/api/quotes/${contando}`)
     
