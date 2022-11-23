@@ -1,4 +1,4 @@
-function alterna(palabra){
+export const alterna =(palabra) =>{
     let r ="";
     for(let i = 0; i < palabra.length; ++i){
         if(i%2==0){
